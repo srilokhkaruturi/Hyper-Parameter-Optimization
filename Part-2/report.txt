@@ -1,1 +1,0 @@
-Same number of nodes in hidden layers
