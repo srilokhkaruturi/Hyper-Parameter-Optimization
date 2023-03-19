@@ -27,10 +27,6 @@ class NeuralNet:
             dataFile)
         self.raw_input = pd.read_csv(io.StringIO(dataFile.text), sep=";")
 
-    # TODO: Write code for pre-processing the dataset, which would include
-    # standardization, normalization,
-    #   categorical to numerical, etc
-
     def preprocess(self):
         processed_data = self.raw_input
 
@@ -93,14 +89,6 @@ class NeuralNet:
         self.processed_data = pd.DataFrame(
             scaler.fit_transform(processed_data))
         return 0
-
-    # TODO: Train and evaluate models for all combinations of parameters
-    # specified in the init method. We would like to obtain following outputs:
-    #   1. Training Accuracy and Error (Loss) for every model
-    #   2. Test Accuracy and Error (Loss) for every model
-    #   3. History Curve (Plot of Accuracy against training steps) for all
-    #       the models in a single plot. The plot should be color coded i.e.
-    #       different color for each model
 
     def train_evaluate(self):
         ncols = len(self.processed_data.columns)
